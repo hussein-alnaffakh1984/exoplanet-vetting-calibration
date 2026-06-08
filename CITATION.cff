@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Calibrated, Uncertainty-Aware Vetting of Kepler Exoplanet Candidates"
+authors:
+  - family-names: "Al-Naffakh"
+    given-names: "Hussein Ali Hussein"
+    affiliation: "University of Babylon and University of Alkafeel, Najaf, Iraq"
+license: MIT
+repository-code: "https://github.com/hussein-alnaffakh1984/exoplanet-vetting-calibration"
+keywords:
+  - exoplanets
+  - machine learning
+  - calibration
+  - uncertainty quantification
+  - Kepler
