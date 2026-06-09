@@ -9,7 +9,7 @@ accuracy but calibration and uncertainty, which are the properties that govern
 follow-up prioritisation.
 
 **Author:** Hussein Ali Hussein Al-Naffakh
-**Affiliation:** University of Babylon and University of Alkafeel, Najaf, Iraq
+**Affiliation:** University of Alkafeel, Najaf, Iraq
 **GitHub:** https://github.com/hussein-alnaffakh1984
 
 ## What the code produces
