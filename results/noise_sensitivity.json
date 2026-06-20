@@ -1,0 +1,18 @@
+{
+ "independent_gaussian": {
+  "mean_flip_rate": 0.0657,
+  "fragile_fraction": 0.1867
+ },
+ "correlated_rho0.5": {
+  "mean_flip_rate": 0.0673,
+  "fragile_fraction": 0.1912
+ },
+ "asymmetric_split_normal": {
+  "mean_flip_rate": 0.0427,
+  "fragile_fraction": 0.1217
+ },
+ "student_t_df3": {
+  "mean_flip_rate": 0.0567,
+  "fragile_fraction": 0.1613
+ }
+}
