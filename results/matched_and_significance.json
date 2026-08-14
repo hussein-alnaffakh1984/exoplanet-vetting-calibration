@@ -1,13 +1,4 @@
 {
- "fragile_significance": {
-  "frac_baseline": 0.18521284540702015,
-  "frac_erraware": 0.07318894697535475,
-  "fixed_by_aug": 166,
-  "newly_fragile": 16,
-  "mcnemar_chi2": 121.98351648351648,
-  "mcnemar_p": 2.327637501118239e-28,
-  "fisher_p": 3.1243186472655254e-18
- },
  "matched_physical": {
   "n": 5302,
   "protocol": "3-repeat 70/15/15 holdout (matched to flux)",
@@ -23,5 +14,14 @@
    0.034250773490596916,
    0.006488827354378239
   ]
+ },
+ "fragile_significance": {
+  "frac_baseline": 0.18521284540702015,
+  "frac_erraware": 0.07318894697535475,
+  "fixed_by_aug": 166,
+  "newly_fragile": 16,
+  "mcnemar_chi2": 121.98351648351648,
+  "mcnemar_p": 2.327637501118239e-28,
+  "fisher_p": 3.1243186472655254e-18
  }
 }

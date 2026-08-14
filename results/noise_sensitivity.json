@@ -1,18 +1,50 @@
 {
- "independent_gaussian": {
-  "mean_flip_rate": 0.0657,
-  "fragile_fraction": 0.1867
+ "families": {
+  "independent_gaussian": {
+   "mean_flip_rate": 0.0657,
+   "fragile_fraction": 0.1867
+  },
+  "correlated_rho0.3": {
+   "mean_flip_rate": 0.0669,
+   "fragile_fraction": 0.1882
+  },
+  "correlated_rho0.5": {
+   "mean_flip_rate": 0.0673,
+   "fragile_fraction": 0.1912
+  },
+  "correlated_rho0.7": {
+   "mean_flip_rate": 0.0677,
+   "fragile_fraction": 0.1994
+  },
+  "asymmetric_split_normal": {
+   "mean_flip_rate": 0.0423,
+   "fragile_fraction": 0.1202
+  },
+  "student_t_df3": {
+   "mean_flip_rate": 0.0567,
+   "fragile_fraction": 0.1613
+  },
+  "uniform_box": {
+   "mean_flip_rate": 0.0708,
+   "fragile_fraction": 0.1979
+  }
  },
- "correlated_rho0.5": {
-  "mean_flip_rate": 0.0673,
-  "fragile_fraction": 0.1912
- },
- "asymmetric_split_normal": {
-  "mean_flip_rate": 0.0427,
-  "fragile_fraction": 0.1217
- },
- "student_t_df3": {
-  "mean_flip_rate": 0.0567,
-  "fragile_fraction": 0.1613
+ "scale_sweep": {
+  "0.5": {
+   "mean_flip_rate": 0.0454,
+   "fragile_fraction": 0.1359
+  },
+  "1.0": {
+   "mean_flip_rate": 0.0657,
+   "fragile_fraction": 0.1867
+  },
+  "1.5": {
+   "mean_flip_rate": 0.0802,
+   "fragile_fraction": 0.2188
+  },
+  "2.0": {
+   "mean_flip_rate": 0.0931,
+   "fragile_fraction": 0.2502
+  }
  }
 }

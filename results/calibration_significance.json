@@ -1,0 +1,24 @@
+{
+ "protocol": {
+  "representation": "flux",
+  "seed": 0,
+  "n_test": 796,
+  "note": "one representative split, not the pooled three-repeat evaluation behind the Table 2 means"
+ },
+ "LightGBM": {
+  "acc_raw": 0.8228643216080402,
+  "acc_isotonic": 0.821608040201005,
+  "n01": 4,
+  "n10": 5,
+  "chi2": 0.0,
+  "p": 1.0
+ },
+ "BayesianNetwork": {
+  "acc_raw": 0.7311557788944724,
+  "acc_isotonic": 0.7386934673366834,
+  "n01": 37,
+  "n10": 31,
+  "chi2": 0.36764705882352944,
+  "p": 0.544289624429402
+ }
+}
