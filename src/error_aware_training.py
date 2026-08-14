@@ -35,7 +35,7 @@ def _augment(X, y, sig, K=4, seed=0):
 def _fragile(model, X, sig, n_mc=200, thresh=0.10):
     base = (model.predict_proba(X)[:, 1] >= 0.5).astype(int)
     flips = np.zeros(len(X))
-    rng = np.random.default_rng(1)
+    rng = np.random.default_rng(0)   # unified with measurement_error.py
     for _ in range(n_mc):
         Xp = X + rng.normal(0, 1, X.shape) * np.nan_to_num(sig)
         flips += ((model.predict_proba(Xp)[:, 1] >= 0.5).astype(int) != base)

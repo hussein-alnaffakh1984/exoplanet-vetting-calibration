@@ -74,6 +74,9 @@ def run(n_mc=200, frag_thresh=0.10):
         acc_by_uncertainty_tercile=acc_terc,
         fragility_ablation=ablation,
     )
+    np.savez_compressed("../results/measurement_error_percandidate.npz",
+                        test_index=te, flip_rate=flip_rate, uncertainty=unc,
+                        p0=p0, base_pred=base, y_true=yte)
     json.dump(summary, open("../results/measurement_error.json", "w"), indent=1)
     print(json.dumps(summary, indent=1))
 

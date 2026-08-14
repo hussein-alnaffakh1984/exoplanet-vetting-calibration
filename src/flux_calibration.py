@@ -26,7 +26,7 @@ def _split(n, y, seed):
     return tr, cal, te
 
 
-def _bnn(Xtr, ytr, Xcal, Xte, T=200, epochs=45):
+def _bnn(Xtr, ytr, Xcal, Xte, T=200, epochs=45, with_std=False):
     import torch
     import torch.nn as nn
     torch.set_num_threads(1)
@@ -69,8 +69,12 @@ def _bnn(Xtr, ytr, Xcal, Xte, T=200, epochs=45):
             for _ in range(T):
                 ps.append(torch.sigmoid(net(x)).numpy().ravel())
         P = np.stack(ps)
-        return P.mean(0)
+        return (P.mean(0), P.std(0)) if with_std else P.mean(0)
 
+    if with_std:
+        mte, ste = mc(Xte)
+        mcal, _ = mc(Xcal)
+        return mte, ste, mcal
     return mc(Xte), mc(Xcal)
 
 
