@@ -138,7 +138,7 @@ def figS4_measurement_terciles():
 def figS5_cross_mission():
     """Figure S5: cross-mission transfer Kepler -> TESS. Reads cross_mission.json."""
     d = json.load(open(f"{RES}/cross_mission.json"))
-    keys = [("kep_heldout", "Kepler\nhold-out"), ("tess_zero", "TESS\nzero-shot"), ("tess_recal", "TESS\nrecalibrated")]
+    keys = [("kepler_holdout", "Kepler\nhold-out"), ("tess_zero_shot", "TESS\nzero-shot"), ("tess_recalibrated", "TESS\nrecalibrated")]
     keys = [(k, l) for k, l in keys if k in d]
     if not keys:
         print("  [skip] figS5: keys missing"); return
@@ -175,23 +175,38 @@ def figS6_feature_leakage():
 
 
 def figS7_noise_robustness():
-    """Figure S7: fragile fraction across noise models and noise levels.
-       Reads noise_sensitivity.json and fragility_ablation.json."""
-    ns = json.load(open(f"{RES}/noise_sensitivity.json")); fr = json.load(open(f"{RES}/fragility_ablation.json"))
-    fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4.4), dpi=300)
-    labs = {"independent_gaussian": "Gaussian", "correlated_rho0.5": "Correlated", "asymmetric_split_normal": "Split-normal", "student_t_df3": "Student-t"}
-    names = [labs.get(k, k) for k in ns]; frac = [ns[k]["fragile_fraction"] * 100 for k in ns]
+    """Fragile fraction across noise families and under error-scale misspecification."""
+    d = json.load(open(f"{RES}/noise_sensitivity.json"))
+    fam, sw = d["families"], d["scale_sweep"]
+    labs = {"independent_gaussian": "Gaussian", "correlated_rho0.3": "Corr. 0.3",
+            "correlated_rho0.5": "Corr. 0.5", "correlated_rho0.7": "Corr. 0.7",
+            "asymmetric_split_normal": "Split-normal", "student_t_df3": "Student-t",
+            "uniform_box": "Uniform"}
+    fig, (a1, a2) = plt.subplots(1, 2, figsize=(12.5, 4.6), dpi=300)
+    names = [labs.get(k, k) for k in fam]
+    frac = [fam[k]["fragile_fraction"] * 100 for k in fam]
     a1.bar(names, frac, color=ORANGE, edgecolor="black", lw=0.6)
-    for i, v in enumerate(frac): a1.text(i, v + 0.4, f"{v:.1f}%", ha="center", fontsize=9, fontweight="bold")
-    a1.set_ylabel("Fragile fraction (%)"); a1.set_title("Robustness across noise models", fontweight="bold"); a1.tick_params(axis="x", labelsize=9)
-    levels = sorted(fr.keys(), key=float); xs = [float(k) for k in levels]; ys = [fr[k] * 100 for k in levels]
-    a2.plot(xs, ys, "o-", color=RED, lw=1.8, ms=6)
-    for xv, yv in zip(xs, ys): a2.text(xv, yv + 0.5, f"{yv:.1f}%", ha="center", fontsize=9)
-    a2.set_xlabel("Relative measurement-noise level"); a2.set_ylabel("Fragile fraction (%)")
-    a2.set_title("Fragility vs noise level", fontweight="bold"); a2.grid(alpha=0.25)
-    plt.tight_layout(); fig.savefig(f"{OUT}/figS7_noise_robustness.png", dpi=300, bbox_inches="tight", facecolor="white"); plt.close(fig)
+    for i, v in enumerate(frac):
+        a1.text(i, v + 0.4, f"{v:.1f}%", ha="center", fontsize=9.5, fontweight="bold")
+    a1.axhline(frac[0], ls="--", color="gray", lw=1.2)
+    a1.set_ylabel("Fragile fraction (%)", fontsize=11)
+    a1.set_title("Robustness across noise families", fontsize=12, fontweight="bold")
+    a1.tick_params(axis="x", labelsize=10, rotation=20)
+    a1.set_ylim(0, max(frac) * 1.22)
+    xs = sorted(float(k) for k in sw)
+    ys = [sw[f"{x:.1f}"]["fragile_fraction"] * 100 for x in xs]
+    a2.plot(xs, ys, "o-", color=RED, lw=1.8, ms=7)
+    for xv, yv in zip(xs, ys):
+        a2.text(xv, yv + 0.6, f"{yv:.1f}%", ha="center", fontsize=10, fontweight="bold")
+    a2.set_xlabel("Error-bar scale multiplier", fontsize=11)
+    a2.set_ylabel("Fragile fraction (%)", fontsize=11)
+    a2.set_title("Sensitivity to error-scale misspecification", fontsize=12, fontweight="bold")
+    a2.set_xticks(xs); a2.grid(alpha=0.25); a2.set_ylim(0, max(ys) * 1.2)
+    plt.tight_layout()
+    fig.savefig(f"{OUT}/figS7_noise_robustness.png", dpi=300, bbox_inches="tight",
+                facecolor="white")
+    plt.close(fig)
     print("  figS7_noise_robustness.png")
-
 
 if __name__ == "__main__":
     print("Regenerating figures into figures/ ...")

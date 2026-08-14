@@ -1,6 +1,9 @@
-data/*.csv
-data/*.npz
-venv/
 __pycache__/
 *.pyc
-.DS_Store
+.ipynb_checkpoints/
+data/*.csv
+data/*.npz
+!data/README.md
+!data/TOI_snapshot_date.txt
+*.docx
+*.pdf
