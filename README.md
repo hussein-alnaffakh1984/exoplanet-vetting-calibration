@@ -82,6 +82,25 @@ was used, and the commit hash. Library versions in `requirements.txt` are
 pinned exactly rather than by lower bound, because several reported values
 move at the third decimal place across minor versions.
 
+## Citation
+
+If you use this code or its results, please cite the published paper:
+
+> Al-Naffakh, H.A.H., Radhi, A.D., Ghazali, R., & Majeed, F.A. (2026). Calibrated, Uncertainty-aware Gradient Boosting with Error-bar-augmented Training for Exoplanet Candidate Vetting. *International Journal of Intelligent Engineering and Systems*, 19(10), 857–877. https://doi.org/10.22266/ijies2026.1031.43
+
+```bibtex
+@article{AlNaffakh2026Exoplanet,
+  title   = {Calibrated, Uncertainty-aware Gradient Boosting with Error-bar-augmented Training for Exoplanet Candidate Vetting},
+  author  = {Al-Naffakh, Hussein Ali Hussein and Radhi, Ahmed Dheyaa and Ghazali, Rozaida and Majeed, Fouad A.},
+  journal = {International Journal of Intelligent Engineering and Systems},
+  year    = {2026},
+  volume  = {19},
+  number  = {10},
+  pages   = {857--877},
+  doi     = {10.22266/ijies2026.1031.43}
+}
+```
+
 **Author:** Hussein Ali Hussein Al-Naffakh
 **Affiliation:** University of Babylon and University of Alkafeel, Najaf, Iraq
 **License:** MIT (see `LICENSE`)

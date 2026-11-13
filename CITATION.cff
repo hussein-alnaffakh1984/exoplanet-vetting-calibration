@@ -1,10 +1,11 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use this software, please cite the published paper below."
 title: "Exoplanet vetting calibration and uncertainty (code)"
 authors:
   - family-names: "Al-Naffakh"
     given-names: "Hussein Ali Hussein"
     affiliation: "University of Babylon and University of Alkafeel, Najaf, Iraq"
+    orcid: "https://orcid.org/0000-0002-4775-8818"
 license: MIT
 repository-code: "https://github.com/hussein-alnaffakh1984/exoplanet-vetting-calibration"
 keywords:
@@ -13,3 +14,23 @@ keywords:
   - calibration
   - uncertainty quantification
   - Kepler
+preferred-citation:
+  type: article
+  title: "Calibrated, Uncertainty-aware Gradient Boosting with Error-bar-augmented Training for Exoplanet Candidate Vetting"
+  authors:
+    - family-names: "Al-Naffakh"
+      given-names: "Hussein Ali Hussein"
+      orcid: "https://orcid.org/0000-0002-4775-8818"
+    - family-names: "Radhi"
+      given-names: "Ahmed Dheyaa"
+    - family-names: "Ghazali"
+      given-names: "Rozaida"
+    - family-names: "Majeed"
+      given-names: "Fouad A."
+  journal: "International Journal of Intelligent Engineering and Systems"
+  year: 2026
+  volume: 19
+  issue: 10
+  start: 857
+  end: 877
+  doi: "10.22266/ijies2026.1031.43"
