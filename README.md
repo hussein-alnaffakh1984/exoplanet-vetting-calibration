@@ -1,5 +1,7 @@
 # Exoplanet KOI Classification — Code
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24208770.svg)](https://doi.org/10.5281/zenodo.24208770)
+
 Reproducible code for a machine-learning study of Kepler Objects of Interest
 (KOIs) built entirely from public archive tables. The pipeline trains
 gradient-boosted and probabilistic classifiers on two open input
