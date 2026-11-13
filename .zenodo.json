@@ -1,0 +1,29 @@
+{
+  "title": "Exoplanet vetting calibration and uncertainty (code)",
+  "upload_type": "software",
+  "access_right": "open",
+  "description": "<p>Source code and reproducibility materials accompanying the article: Calibrated, Uncertainty-aware Gradient Boosting with Error-bar-augmented Training for Exoplanet Candidate Vetting. <em>International Journal of Intelligent Engineering and Systems</em>, 2026. https://doi.org/10.22266/ijies2026.1031.43</p><p>If you use this software, please cite the article.</p>",
+  "creators": [
+    {
+      "name": "Al-Naffakh, Hussein Ali Hussein",
+      "affiliation": "University of Alkafeel, Najaf, Iraq",
+      "orcid": "0000-0002-4775-8818"
+    },
+    {
+      "name": "Radhi, Ahmed Dheyaa"
+    },
+    {
+      "name": "Ghazali, Rozaida"
+    },
+    {
+      "name": "Majeed, Fouad A."
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.22266/ijies2026.1031.43",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article"
+    }
+  ]
+}
